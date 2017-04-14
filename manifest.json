@@ -21,13 +21,12 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://www.messenger.com/*", "https://www.facebook.com/messages*/"],
+            "matches": ["https://www.messenger.com/*", "https://www.facebook.com/messages/*"],
             "css": ["css/content_script.css"],
             "js": ["js/content_script.js"]
         }
     ],
     "permissions": [
-        "http://*.google.com/*",
         "background",
         "contentSettings",
         "declarativeContent",
