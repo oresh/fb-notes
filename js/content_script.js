@@ -79,8 +79,10 @@ class Score {
         combinations.push( last_name + provider );
     });
 
-    var contacter = document.getElementsByClassName("pv-profile-section pv-contact-info artdeco-container-card ember-view")[0];
-    contacter.innerHTML += '<div class="email-checks">' + combinations.join('\n') + '</div>';
+    var contacter = document.getElementsByClassName("pv-profile-section pv-contact-info artdeco-container-card ember-view")[0].parentNode.parentNode.parentNode;
+    var element = document.createElement('div');
+    element.innerHTML = '<div class="email-checks">' + combinations.join('\n') + '</div>';
+    contacter.insertBefore(element, contacter.firstChild);
   }
 
   var displayImage = function() {
