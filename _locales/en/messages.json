@@ -1,10 +1,10 @@
 {
     "extName": {
-        "message": "Facebook Messenger Notes",
+        "message": "Search Linkedin user in Facebook",
         "description": "Extension's name"
     },
     "extDescr": {
-        "message": "Add personal notes for users in messenger",
+        "message": "Search Linkedin user in Facebook",
         "description": "Extension's description"
     },
     "o_tabs_help": {

@@ -1,20 +1,73 @@
-.notes-toggle-btn {
-  height: 42px;
-  line-height: 42px;
-  padding: 0 0 0 51px;
-  cursor: pointer;
-  background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIuMDAxIDUxMi4wMDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMi4wMDEgNTEyLjAwMTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00NjEuOTgsNjIuMzVoLTM4LjA1NnYtOS41ODVDNDIzLjkyMywyMy42Nyw0MDAuMjUzLDAsMzcxLjE1OCwwcy01Mi43NjUsMjMuNjctNTIuNzY1LDUyLjc2NXY5LjU4NUg1MC4wMjIgICAgYy01LjYzMiwwLTEwLjE5OSw0LjU2Ni0xMC4xOTksMTAuMTk5djMwNS4yNWMwLDIuNzA1LDEuMDc1LDUuMjk5LDIuOTg3LDcuMjEybDEyNC4wMDIsMTI0LjAwMyAgICBjMS45MTMsMS45MTIsNC41MDcsMi45ODcsNy4yMTIsMi45ODdINDYxLjk4YzUuNjMyLDAsMTAuMTk5LTQuNTY2LDEwLjE5OS0xMC4xOTlWNzIuNTQ5ICAgIEM0NzIuMTc5LDY2LjkxNiw0NjcuNjEzLDYyLjM1LDQ2MS45OCw2Mi4zNXogTTMzOC43OSw1Mi43NjVoMC4wMDFjMC0xNy44NDcsMTQuNTItMzIuMzY2LDMyLjM2Ni0zMi4zNjYgICAgczMyLjM2NiwxNC41MiwzMi4zNjYsMzIuMzY2djkuNTg1SDMzOC43OVY1Mi43NjV6IE03MS42NiwzODUuMDEzaDk0LjI3M2wwLjIyNSw5NC40OTlMNzEuNjYsMzg1LjAxM3ogTTQ1MS43OCw0OTEuNjAySDE4Ni41ODYgICAgbC0wLjI3OC0xMTYuODEzYy0wLjAxMy01LjYyNC00LjU3NS0xMC4xNzUtMTAuMTk5LTEwLjE3NUg2MC4yMjFWODIuNzQ4aDM0My4zMDR2OTYuNTE0YzAsNi4yNzctNS4xMDcsMTEuMzgzLTExLjM4MywxMS4zODMgICAgcy0xMS4zODMtNS4xMDctMTEuMzgzLTExLjM4M3YtMjUuMThjMC01LjYzMy00LjU2Ny0xMC4xOTktMTAuMTk5LTEwLjE5OXMtMTAuMTk5LDQuNTY2LTEwLjE5OSwxMC4xOTl2MjUuMTggICAgYzAsMTcuNTI0LDE0LjI1OCwzMS43ODIsMzEuNzgyLDMxLjc4MmMxNy41MjQsMCwzMS43ODItMTQuMjU3LDMxLjc4Mi0zMS43ODJWODIuNzQ4aDI3Ljg1N1Y0OTEuNjAyeiIgZmlsbD0iIzAwNkRGMCIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTM3MC41NTgsMTA1LjA1MmMtNS42MzIsMC0xMC4xOTksNC41NjYtMTAuMTk5LDEwLjE5OXY1Ljk5NWMwLDUuNjMzLDQuNTY3LDEwLjE5OSwxMC4xOTksMTAuMTk5ICAgIGM1LjYzMiwwLDEwLjE5OS00LjU2NiwxMC4xOTktMTAuMTk5di01Ljk5NUMzODAuNzU3LDEwOS42MTgsMzc2LjE5LDEwNS4wNTIsMzcwLjU1OCwxMDUuMDUyeiIgZmlsbD0iIzAwNkRGMCIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
-  background-repeat: no-repeat;
-  background-position: 17px 9px;
+.facebook-search {
+  font-size: 16px;
+  margin-left: 10px;
+  position: relative;
+  top: -1px;
 }
-.notes-textarea {
-  margin: 7px 15px !important;
-  min-height: 80px;
+
+.linkedin_photo_block {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+._4-u2._19ah._2ph_._4-u8 img {
+  margin-top: 15px;
+}
+
+.email-checks {
   padding: 10px;
-  box-sizing: border-box;
-  width: 80%;
+  background: #fff;
+  font-size: 12px;
+  line-height: 1.4em;
+  border: 1px #ddd solid;
+  margin-top: 10px;
 }
-.notes-textarea:focus {
-  outline: none;
-  border-color: #888;
+
+@media print {
+	.gr__linkedin_com .pv-ad-banner--light,
+	.gr__linkedin_com #extended-nav,
+	.gr__linkedin_com .pv-top-card-section__actions,
+	.gr__linkedin_com .pv-profile-wrapper .profile-view-grid .right-rail,
+	.gr__linkedin_com .profile-background-image--loading,
+	.gr__linkedin_com .pv-deferred-area:nth-child(2),
+	.gr__linkedin_com .pv-deferred-area:last-child,
+	.gr__linkedin_com .pv-skill-entity__highlights-list,
+	.gr__linkedin_com button[aria-controls="featured-skills-expanded"],
+	.gr__linkedin_com .nav-footer--static,
+	.msg-overlay-list-bubble--is-minimized,
+	.gr__linkedin_com #featured-skills-expanded > p,
+	.gr__linkedin_com .facebook-search,
+	.gr__linkedin_com .pv-profile-section__see-less-inline,
+	.gr__linkedin_com .pv-accomplishments-block__expand,
+	.gr__linkedin_com .pv-accomplishments-block__count,
+	.gr__linkedin_com .pv-accomplishments-block:before,
+	.gr__linkedin_com .pv-entity__logo,
+	.gr__linkedin_com .pv-skill-entity__endorse-actions {
+	  display: none !important;
+	}
+	.gr__linkedin_com .pv-accomplishments-block {
+		padding-top: 12px;
+	}
+	.gr__linkedin_com .authentication-outlet,
+	.gr__linkedin_com .pv-entity__extra-details {
+	  margin-top: 0;
+	}
+	.gr__linkedin_com .neptune-grid.two-column .core-rail {
+	  width: 100%;
+	}
+	.gr__linkedin_com .pv-entity__summary-info {
+		margin-left: 0;
+	}
+	.gr__linkedin_com .pv-top-card-section__header--bg-img-v2 {
+	  margin-top: 0;
+	}
+	.gr__linkedin_com .pv-featured-skills-list--include-highlights .pv-skill-entity--featured {
+	  float: left;
+	  border-bottom: 0;
+	  padding-top: 0;
+	}
+	.gr__linkedin_com #featured-skills-expanded {
+	  clear: both;
+	}
 }

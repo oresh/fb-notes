@@ -5,111 +5,112 @@ chrome.extension.sendMessage({msg: "I'm content-script"}, function (response) {
 });
 */
 
+class Score {
+  constructor() {
+    this.score = 0;
+  }
+  checkTitle() {
+    let titleScore = 0;
+    const good = ["developer","engineer","lead","architect","senior","software","front-end","web"];
+    const bad = ["q&a","qa","manager","ceo","designer","ict","sales","quality","assurance"];
+    const title = document.getElementsByClassName("pv-top-card-section__headline")[0].innerText;
+    const words = title.split(' ');
+    words.forEach(_=>{
+      
+    });
+  }
+  checkExperience() {
+
+  }
+  checkSkills() {
+
+  }
+  checkCompany() {
+
+  }
+  calcScore() {
+    checkTitle();
+    checkExperience();
+    checkSkills();
+    checkCompany();
+    return this.score;
+  }
+}
+
 (function() {
-
-  if (window.Element && !Element.prototype.closest) {
-    Element.prototype.closest = function(s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-        i,
-        el = this;
-      do {
-        i = matches.length;
-        while (--i >= 0 && matches.item(i) !== el) {};
-      } while ((i < 0) && (el = el.parentElement)); 
-      return el;
-    };
+  var init = function() {
+    addEmails();
+    addFacebookBtn();
   }
 
-  var getNotes = function (userName) {
-    return localStorage.getItem('notes_' + userName) || '';
+  var addFacebookBtn = function() {
+    console.log('!@!@$???');
+    var $name = document.querySelectorAll('.pv-top-card-section__name');
+    var name = $name[0].innerText.split(' ');
+
+    var img = document.querySelectorAll('.pv-top-card-section__image');
+    var imgUrl = img[0].getAttribute('src');
+    var url = 'https://www.facebook.com/search/str/' + name.join('%2B') + '/keywords_users?linkedin_photo=' + imgUrl;
+
+    var facebookBtn = document.createElement("a");
+    var facebookText = document.createTextNode("facebook");
+    facebookBtn.appendChild(facebookText);
+    facebookBtn.classList.add('facebook-search');
+    facebookBtn.setAttribute('href', url);
+    facebookBtn.setAttribute('target', '_blank');
+
+    $name[0].appendChild(facebookBtn);
   }
 
-  var getUser = function (target) {
-    if (target) {
-      var link = target.closest("._5l-3._1ht1").querySelectorAll('._5l-3._1ht5')[0];   
-    } else {
-      var link = document.querySelectorAll('._5l-3._1ht1._1ht2')[0].querySelectorAll('._5l-3._1ht5')[0];
-    }
-    if (link) {
-      var href = link.getAttribute('id');
-      if (href.indexOf('row_header_id_thread') != -1) {
-        return href.split('row_header_id_thread:')[1];
-      } else {
-        return href.split('row_header_id_user:')[1];
-      }
-    }
-    return false;
-  }
+  var addEmails = function() {
+    var full_name = document.getElementsByClassName("pv-top-card-section__name")[0].innerText;
+    var first_name = full_name.split(' ')[0].toLowerCase();
+    var last_name = full_name.split(' ').pop().toLowerCase();
 
-  var showNotes = function (target) {
-    var userName = getUser(target);
-    if (!userName) return;
-    var userNotes = getNotes(userName);
-    createNote(userNotes);
-  }
-
-  var createNote = function (text) {
-    var currentTextarea = document.querySelectorAll('.notes-textarea')[0];
-    if (currentTextarea) {
-      currentTextarea.value = text;
-    } else {
-      var button = document.querySelectorAll('.notes-toggle-btn');
-      var parent = button[0].parentNode;
-      var notes = document.createElement("textarea");
-      notes.value = text;
-      notes.classList.add('notes-textarea');
-      notes.addEventListener('keyup', saveNotes);
-      parent.appendChild(notes);
-    }
-  }
-
-  var removeCurrentNotes = function () {
-    var textarea = document.querySelectorAll('.notes-textarea')[0];
-    textarea.parentNode.removeChild(textarea);
-  }
-
-  var saveNotes = function () {
-    var textareaText = document.querySelectorAll('.notes-textarea')[0].value;
-    var userName = getUser();
-    localStorage.setItem('notes_' + userName, textareaText);
-  }
-
-  var toggleNotes = function () {
-    var textarea = document.querySelectorAll('.notes-textarea')[0];
-    if (textarea) {
-      if (textarea.style.display == 'none') {
-        textarea.style.display = 'block';
-        showNotes();
-      } else {
-        textarea.style.display = 'none';
-      }
-    } else {
-      showNotes();
-    }
-  }
-
-  var addNotesBtn  = function () {
-    var conversationList = document.querySelectorAll('.uiScrollableAreaContent')[0];
-    conversationList.addEventListener('click', function(e) {
-      showNotes(e.target);
+    console.log('I Work!');
+    var combinations = [];
+    var providers = ['@gmail.com','@yahoo.com'];
+    providers.forEach(provider => {
+        combinations.push( first_name[0] + last_name + provider );
+        combinations.push( first_name + last_name[0] + provider );
+        combinations.push( first_name + last_name + provider );
+        combinations.push( first_name + '.' + last_name + provider );
+        combinations.push( first_name + '_' + last_name + provider );
+        combinations.push( last_name + provider );
     });
 
-    var sidebarItems = document.querySelectorAll('._3szn._3szo')
-    var parent = sidebarItems[0].parentNode;
-    var notesBtn = document.createElement("div");
-    var notesText = document.createTextNode("Notes");
-
-    notesBtn.appendChild(notesText);
-    notesBtn.classList.add('notes-toggle-btn');
-    notesBtn.addEventListener('click', function(e) {
-      toggleNotes();
-    });
-    parent.appendChild(notesBtn);
+    var contacter = document.getElementsByClassName("pv-profile-section pv-contact-info artdeco-container-card ember-view")[0];
+    contacter.innerHTML += '<div class="email-checks">' + combinations.join('\n') + '</div>';
   }
 
-  window.addEventListener('load', function() {
-    addNotesBtn();
-  });
+  var displayImage = function() {
+    if (window.location.search.indexOf('?linkedin_photo=') == 0) {
+      setTimeout(function() {
+        var photo = window.location.search.split('?linkedin_photo=')[1];
+        var photo_split = photo.split('&');
+        if (photo_split.length > 1) {
+          photo = photo_split[0];
+        }
+        photo = photo.replace('shrink_100_100', 'shrinknp_400_400');
+        var block = document.querySelectorAll('._4-u2._5v6e._4-u8')[0];
+        if (!block) {
+          block = document.querySelectorAll('._4-u2._19ah._2ph_._4-u8')[0];
+        }
 
+        var photoBlock = document.createElement("img");
+        photoBlock.classList.add('linkedin_photo_block');
+        photoBlock.setAttribute('src', photo);
+        block.appendChild(photoBlock);
+      }, 500);
+    }
+  }
+
+  if (window.location.host == "www.linkedin.com") {
+    setTimeout(init, 4000);
+  }
+
+  if (window.location.host == "www.facebook.com") {
+    init();
+  }
 
 })();
