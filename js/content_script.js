@@ -39,8 +39,12 @@ class Score {
 
 (function() {
   var init = function() {
-    addEmails();
-    addFacebookBtn();
+    if (window.location.host == "www.linkedin.com") {
+      addEmails();
+      addFacebookBtn();
+    } else {
+      displayImage();
+    }
   }
 
   var addFacebookBtn = function() {
@@ -48,8 +52,9 @@ class Score {
     var $name = document.querySelectorAll('.pv-top-card-section__name');
     var name = $name[0].innerText.split(' ');
 
-    var img = document.querySelectorAll('.pv-top-card-section__image');
-    var imgUrl = img[0].getAttribute('src');
+    var img = document.querySelectorAll('.presence-entity__image');
+    var imgUrl = img[0].getAttribute('style').split('url("')[1].slice(0,-3);
+    console.log(imgUrl);
     var url = 'https://www.facebook.com/search/str/' + name.join('%2B') + '/keywords_users?linkedin_photo=' + imgUrl;
 
     var facebookBtn = document.createElement("a");
@@ -63,37 +68,40 @@ class Score {
   }
 
   var addEmails = function() {
-    var full_name = document.getElementsByClassName("pv-top-card-section__name")[0].innerText;
-    var first_name = full_name.split(' ')[0].toLowerCase();
-    var last_name = full_name.split(' ').pop().toLowerCase();
+    
+      var full_name = document.getElementsByClassName("pv-top-card-section__name")[0].innerText;
+      var first_name = full_name.split(' ')[0].toLowerCase();
+      var last_name = full_name.split(' ').pop().toLowerCase();
 
-    console.log('I Work!');
-    var combinations = [];
-    var providers = ['@gmail.com','@yahoo.com'];
-    providers.forEach(provider => {
-        combinations.push( first_name[0] + last_name + provider );
-        combinations.push( first_name + last_name[0] + provider );
-        combinations.push( first_name + last_name + provider );
-        combinations.push( first_name + '.' + last_name + provider );
-        combinations.push( first_name + '_' + last_name + provider );
-        combinations.push( last_name + provider );
-    });
+      var combinations = [];
+      var providers = ['@gmail.com','@yahoo.com'];
+      providers.forEach(provider => {
+          combinations.push( first_name[0] + last_name + provider );
+          combinations.push( first_name + last_name[0] + provider );
+          combinations.push( first_name + last_name + provider );
+          combinations.push( first_name + '.' + last_name + provider );
+          combinations.push( first_name + '_' + last_name + provider );
+          combinations.push( last_name + provider );
+          combinations.push( last_name + first_name[0] + provider );
+          combinations.push( last_name + first_name + provider );
+      });
 
-    var contacter = document.getElementsByClassName("pv-profile-section pv-contact-info artdeco-container-card ember-view")[0].parentNode.parentNode.parentNode;
-    var element = document.createElement('div');
-    element.innerHTML = '<div class="email-checks">' + combinations.join('\n') + '</div>';
-    contacter.insertBefore(element, contacter.firstChild);
+      var contacter = document.getElementsByClassName("pv-profile-section pv-browsemap-section profile-section artdeco-container-card ember-view")[0].parentNode.parentNode.parentNode;
+      var element = document.createElement('div');
+      element.innerHTML = '<div class="email-checks">' + combinations.join('\n') + '</div>';
+      contacter.insertBefore(element, contacter.firstChild);
   }
 
   var displayImage = function() {
     if (window.location.search.indexOf('?linkedin_photo=') == 0) {
       setTimeout(function() {
         var photo = window.location.search.split('?linkedin_photo=')[1];
-        var photo_split = photo.split('&');
-        if (photo_split.length > 1) {
-          photo = photo_split[0];
-        }
-        photo = photo.replace('shrink_100_100', 'shrinknp_400_400');
+        // var photo_split = photo.split('&');
+        // if (photo_split.length > 1) {
+        //   photo = photo_split[0];
+        // }
+        //photo = photo.replace('shrink_100_100', 'shrinknp_400_400');
+        console.log(photo);
         var block = document.querySelectorAll('._4-u2._5v6e._4-u8')[0];
         if (!block) {
           block = document.querySelectorAll('._4-u2._19ah._2ph_._4-u8')[0];
@@ -101,7 +109,7 @@ class Score {
 
         var photoBlock = document.createElement("img");
         photoBlock.classList.add('linkedin_photo_block');
-        photoBlock.setAttribute('src', photo);
+        photoBlock.setAttribute('src', decodeURIComponent(photo));
         block.appendChild(photoBlock);
       }, 500);
     }
